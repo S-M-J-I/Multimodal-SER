@@ -19,6 +19,7 @@ sklearn = "*"
 ipykernel = "*"
 jupyter = "*"
 notebook = "*"
+torcheval = "*"
 
 [dev-packages]
 
