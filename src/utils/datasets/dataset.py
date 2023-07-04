@@ -12,7 +12,7 @@ random.seed(42)
 # The dataset to use in the dataloader
 
 
-class RAVDESSDataset(Dataset):
+class Dataset(Dataset):
     def __init__(self, dataframe, video_frame_transform=None, video_strategy='optimal', cut_video=False, cut_audio=False):
 
         self.cut_video = cut_video
