@@ -1,11 +1,16 @@
-# Emotion Recognition using Multi-modal Deep Learning
+# An audio video-based multi-modal fusion approach for speech emotion recognition 
 
+### Status: Submitted to IEEE Access
 Link: 
 
+***Authors: S M JISHANUL ISLAM, SAHID HOSSAIN MUSTAKIM, MUSFIRAT HOSSAIN, MYSUN
+MASHIRA, NUR ISLAM SHOURAV, MD. RAYHAN AHMED, SALEKUL ISLAM, SWAKKHAR SHATABDA, AND A.K.M. MUZAHIDUL ISLAM***
 
 ## Requirements
 
-Clone this repository:
+**Step-1:** A [CUDA-enabled GPU](https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf) is preferred. However, for those who would run this code on CPU, ensure to tweak the batch size in correspondence to your hardware capacity. Tweak the batch size in this [file](./src/utils/configs/hyperparams.py) before running the notebooks.
+
+**Step-2:** Clone this repository:
 ```sh
 git clone https://github.com/S-M-J-I/Multimodal-Emotion-Recognition
 ```
@@ -15,7 +20,7 @@ If you have SSH configured:
 git clone git@github.com:S-M-J-I/Multimodal-Emotion-Recognition.git
 ```
 
-And run:
+**Step-3:** Run in terminal:
 ```sh
 pip install -r requirements.txt
 ```
