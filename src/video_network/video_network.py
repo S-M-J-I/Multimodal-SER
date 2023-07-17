@@ -17,7 +17,7 @@ class VideoNetwork(nn.Module):
         # set the limit [if length is 7, then limit = 7-2(default) = 5 ---> if count is = or above this we set to trainable]
         limit = length - fine_tune_limit
 
-        for child in self.net.module.children():
+        for child in self.net.children():
             if count >= limit:
                 for param in child.parameters():
                     param.requires_grad = True

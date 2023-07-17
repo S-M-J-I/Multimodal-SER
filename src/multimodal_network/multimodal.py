@@ -1,7 +1,7 @@
 import torch
 from torch import nn
-from audio_network import AudioNetwork
-from video_network import VideoNetwork
+from audio_network.audio_net import AudioNetwork
+from video_network.video_network import VideoNetwork
 import gc
 
 
