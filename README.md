@@ -8,7 +8,9 @@ MASHIRA, NUR ISLAM SHOURAV, MD. RAYHAN AHMED, SALEKUL ISLAM, SWAKKHAR SHATABDA, 
 
 ## Requirements
 
-**Step-1:** A [CUDA-enabled GPU](https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf) is preferred. However, for those who would run this code on CPU, ensure to tweak the batch size in correspondence to your hardware capacity. Tweak the batch size in this [file](./src/utils/configs/hyperparams.py) before running the notebooks.
+**Prerequisite:** A [CUDA-enabled GPU](https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf) is preferred. However, for those who would run this code on CPU, ensure to tweak the batch size in correspondence to your hardware capacity. Tweak the batch size in the [hyperparams.py](./src/utils/configs/hyperparams.py) file before running the notebooks.
+
+<hr/>
 
 **Step-2:** Clone this repository:
 ```sh
@@ -20,15 +22,23 @@ If you have SSH configured:
 git clone git@github.com:S-M-J-I/Multimodal-Emotion-Recognition.git
 ```
 
-**Step-3:** Run in terminal:
+<hr/>
+
+**Step-3:** Install pipenv. Skip if you already have it in your system.
 ```sh
-pip install -r requirements.txt
+pip3 install --user pipenv
+```
+<hr/>
+
+**Step-4:** Install the modules. Run the following command in the terminal:
+```sh
+pipenv install -r requirements.txt
 ```
 
 
 ## Run the pipelines
 
-To run the notebooks on SAVEE and RAVDESS, we recommend you download the dataset and unpack it in this directory. Then set the path for in their respective notebooks.\
+To run the notebooks on SAVEE and RAVDESS, we recommend you download the dataset and unpack it in this directory. Then set the path to the directory in their respective notebooks.\
 **Note: while setting the file path, ensure the exta '/' is added to the end. Example: `/path_to_dir/`**
 
 To run the model on the datasets, navigate to the individual notebooks made for them in the [explore](./explore/) directory.
@@ -42,3 +52,8 @@ pipenv run jupyter notebook
 To obtain the weights of the model, kindly access the following [link](https://drive.google.com/drive/folders/141iQxVmjnL0zsWhjmakI6stK2CdoeRln?usp=sharing)
 
 For any assistance or issues, kindly open an Issue in this repository.
+
+
+## Contributions
+
+This repository is not accepting any contributors **OUTSIDE** the author list mentioned. For any issues related to the code, we request you to open an Issue.
