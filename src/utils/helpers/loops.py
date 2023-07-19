@@ -4,7 +4,7 @@ import random
 from helpers.functions import *
 
 
-def train_step(model: torch.nn.Module, dataloader, optimizer, loss_fn, idx2class, accuracy_fn=None, save_memory=False, device="cpu"):
+def train_step(model: torch.nn.Module, dataloader, optimizer, loss_fn, idx2class, accuracy_fn=None, save_memory=False, device: str = "cpu"):
     train_loss = 0.0
     train_acc = 0.0
 
@@ -25,7 +25,8 @@ def train_step(model: torch.nn.Module, dataloader, optimizer, loss_fn, idx2class
         videos = videos.detach().cpu()
         # audios = audios.detach().cpu()
         del videos, audios
-        torch.cuda.empty_cache()
+        if device == "cuda" or device.find("cuda") >= 0:
+            torch.cuda.empty_cache()
         gc.collect()
 
         # print(labels.shape, preds.shape)
@@ -53,7 +54,8 @@ def train_step(model: torch.nn.Module, dataloader, optimizer, loss_fn, idx2class
         del preds
         y_logits = y_logits.detach().cpu()
         del y_logits
-        torch.cuda.empty_cache()
+        if device == "cuda" or device.find("cuda") >= 0:
+            torch.cuda.empty_cache()
         gc.collect()
 
     train_loss /= len(dataloader)
@@ -89,7 +91,8 @@ def eval_step(model: torch.nn.Module, dataloader, loss_fn, idx2class, accuracy_f
             videos = videos.detach().cpu()
             # audios = audios.detach().cpu()
             del videos, audios
-            torch.cuda.empty_cache()
+            if device == "cuda" or device.find("cuda") >= 0:
+                torch.cuda.empty_cache()
             gc.collect()
 
             loss = loss_fn(y_logits, labels)
@@ -111,7 +114,9 @@ def eval_step(model: torch.nn.Module, dataloader, loss_fn, idx2class, accuracy_f
             del preds
             y_logits = y_logits.detach().cpu()
             del y_logits
-            torch.cuda.empty_cache()
+
+            if device == "cuda" or device.find("cuda") >= 0:
+                torch.cuda.empty_cache()
             gc.collect()
 
         eval_loss /= len(dataloader)

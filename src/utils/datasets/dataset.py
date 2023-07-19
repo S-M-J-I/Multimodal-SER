@@ -13,10 +13,11 @@ random.seed(42)
 
 
 class Dataset(Dataset):
-    def __init__(self, dataframe, video_frame_transform=None, video_strategy='optimal', cut_video=False, cut_audio=False):
+    def __init__(self, dataframe, video_frame_transform=None, video_strategy='optimal', cut_video=False, cut_audio=False, device="cpu"):
 
         self.cut_video = cut_video
         self.cut_audio = cut_audio
+        self.device = device
 
         self.examples = dataframe
         self.video_frame_transform = {
@@ -73,7 +74,7 @@ class Dataset(Dataset):
 
     def __audio_extraction(self, audio, augment=0):
         feats = feature_extractor(audio, augment)
-        return dict_to_tensor(feats)
+        return dict_to_tensor(feats, self.device)
 
     def __getitem__(self, idx):
         df = self.examples.iloc[idx]

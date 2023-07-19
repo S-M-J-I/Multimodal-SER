@@ -87,12 +87,12 @@ def feature_extractor(file, augment=0, test=False):
     return return_dict
 
 
-def dict_to_tensor(dictionary):
+def dict_to_tensor(dictionary, device):
     out_dict = {}
     for item in dictionary.items():
         if item[0] == "sr":
-            out_dict[item[0]] = torch.tensor(item[1]).to("cuda")
+            out_dict[item[0]] = torch.tensor(item[1]).to(device=device)
         else:
-            out_dict[item[0]] = torch.from_numpy(item[1]).to("cuda")
+            out_dict[item[0]] = torch.from_numpy(item[1]).to(device=device)
 
     return out_dict

@@ -38,7 +38,7 @@ def hear_audio(AUDIO_PATH):
 # Show 1 example
 
 
-def show_example(video_path, audio_path, prediction=None, actual=None, save_memory=False, idx2class=RAVDESSConfigs.idx2class):
+def show_example(video_path, audio_path, prediction=None, actual=None, save_memory=False, idx2class=RAVDESSConfigs().idx2class):
     if prediction is not None:
         print("Predicted Label:", idx2class[prediction])
     print("Actual Label:", idx2class[actual])
