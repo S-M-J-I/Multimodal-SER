@@ -8,7 +8,9 @@ MASHIRA, NUR ISLAM SHOURAV, MD. RAYHAN AHMED, SALEKUL ISLAM, SWAKKHAR SHATABDA, 
 
 ## Requirements
 
-**Prerequisite:** A [CUDA-enabled GPU](https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf) is preferred. However, for those who would run this code on CPU, ensure to tweak the batch size in correspondence to your hardware capacity. Tweak the batch size in the [hyperparams.py](./src/utils/configs/hyperparams.py) file before running the notebooks. If the installations fail, kindly refer to: [conda instructions](./AlernateInstructions.md)
+**Prerequisite:** A [CUDA-enabled GPU](https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf) is preferred. However, for those who would run this code on CPU, ensure to tweak the batch size in correspondence to your hardware capacity. Tweak the batch size in the [hyperparams.py](./src/utils/configs/hyperparams.py) file before running the notebooks. If the installations fail, kindly refer to: [conda instructions](./AlernateInstructions.md).
+
+If frequent problems arise while running on the local environment, kindly resort to the [instructions for cloud notebooks](./cloud_notebooks/CloudInstructions.md), and run on any cloud platform. 
 
 <hr/>
 
