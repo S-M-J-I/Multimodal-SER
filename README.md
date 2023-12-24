@@ -1,6 +1,6 @@
 # An audio video-based multi-modal fusion approach for speech emotion recognition 
 
-### Status: Submitted to IEEE Access
+### Status: Submitted to -
 Link: 
 
 ***Authors: S M JISHANUL ISLAM, SAHID HOSSAIN MUSTAKIM, MUSFIRAT HOSSAIN, MYSUN

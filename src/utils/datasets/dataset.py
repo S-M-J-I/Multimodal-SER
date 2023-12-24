@@ -13,11 +13,19 @@ random.seed(42)
 
 
 class Dataset(Dataset):
-    def __init__(self, dataframe, video_frame_transform=None, video_strategy='optimal', cut_video=False, cut_audio=False, device="cpu"):
+    def __init__(
+        self,
+        dataframe,
+        video_frame_transform=None,
+        video_strategy='optimal',
+        cut_video=False,
+        cut_audio=False,
+        selection="quartile",
+        variant="all"
+    ):
 
         self.cut_video = cut_video
         self.cut_audio = cut_audio
-        self.device = device
 
         self.examples = dataframe
         self.video_frame_transform = {
@@ -27,6 +35,8 @@ class Dataset(Dataset):
         }
 
         self.video_strategy = video_strategy
+        self.selection = selection
+        self.variant = variant
 
         del dataframe, video_frame_transform
 
@@ -53,20 +63,33 @@ class Dataset(Dataset):
 
         q3_lb = q3_point-10
 
+        six_frame_lower_bound = (
+            self.selection == "six" and self.variant == "lower")
+        six_frame_upper_bound = (
+            self.selection == "six" and self.variant == "upper")
+        original_strategy = (
+            self.selection == "quartile" and self.variant == "all")
+
         # select random starting frames
-        frames.append(self.video_frame_transform[augment](video[q1_lb]))
+        if six_frame_lower_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[q1_lb]))
         frames.append(self.video_frame_transform[augment](video[q1_point]))
-        frames.append(self.video_frame_transform[augment](video[q1_up]))
+        if six_frame_upper_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[q1_up]))
 
         # select random mid frames
-        frames.append(self.video_frame_transform[augment](video[q2_lb]))
+        if six_frame_lower_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[q2_lb]))
         frames.append(self.video_frame_transform[augment](video[q2_point]))
-        frames.append(self.video_frame_transform[augment](video[q2_up]))
+        if six_frame_upper_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[q2_up]))
 
         # select random end frames
-        frames.append(self.video_frame_transform[augment](video[q3_lb]))
+        if six_frame_lower_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[q3_lb]))
         frames.append(self.video_frame_transform[augment](video[q3_point]))
-        frames.append(self.video_frame_transform[augment](video[-1]))
+        if six_frame_upper_bound or original_strategy:
+            frames.append(self.video_frame_transform[augment](video[-1]))
 
         frames = torch.stack(frames)
 
@@ -74,7 +97,7 @@ class Dataset(Dataset):
 
     def __audio_extraction(self, audio, augment=0):
         feats = feature_extractor(audio, augment)
-        return dict_to_tensor(feats, self.device)
+        return dict_to_tensor(feats)
 
     def __getitem__(self, idx):
         df = self.examples.iloc[idx]
@@ -98,7 +121,8 @@ class Dataset(Dataset):
 
             if self.video_strategy == 'optimal':
                 video = self.__optimal_strategy(video, augment)
-
+            elif self.video_strategy == 'all':
+                video = self.__all_strategy(video)
         else:
             video = torch.zeros((1, 1))
 
