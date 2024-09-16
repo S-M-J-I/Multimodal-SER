@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 from torch.hub import load_state_dict_from_url
-from audio_network.audio_net import AudioNetwork
-from video_network.video_network import VideoNetwork
+from ..audio_network.audio_net import AudioNetwork
+from ..video_network.video_network import VideoNetwork
 import gc
 
 
