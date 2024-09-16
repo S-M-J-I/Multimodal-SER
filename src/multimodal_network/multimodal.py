@@ -1,8 +1,18 @@
 import torch
 from torch import nn
+from torch.hub import load_state_dict_from_url
 from audio_network.audio_net import AudioNetwork
 from video_network.video_network import VideoNetwork
 import gc
+
+
+__all__ = ['Model', 'model']
+
+models_url = {
+    'savee_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_ravdess.pt',
+    'ravdess_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_savee.pt',
+    'crema_model': ''
+}
 
 
 class MainMultimodal(nn.Module):
@@ -49,3 +59,11 @@ class MainMultimodal(nn.Module):
         out_softmax = self.softmax(out_logits)
 
         return out_logits, out_softmax
+
+
+def model(model_name, pretrained: bool = False, progress: bool = True, **kwargs):
+    model = MainMultimodal(**kwargs)
+    if pretrained:
+        model.load_state_dict(load_state_dict_from_url(models_url[model_name]))
+
+    return model
