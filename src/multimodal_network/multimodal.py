@@ -6,7 +6,7 @@ from ..video_network.video_network import VideoNetwork
 import gc
 
 
-__all__ = ['Model', 'model']
+__all__ = ['savee_model', 'ravdess_model', 'crema_model']
 
 models_url = {
     'savee_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_ravdess.pt',
@@ -61,9 +61,28 @@ class MainMultimodal(nn.Module):
         return out_logits, out_softmax
 
 
-def model(model_name, pretrained: bool = False, progress: bool = True, **kwargs):
+def savee_model(pretrained: bool = False, progress: bool = True, **kwargs):
     model = MainMultimodal(**kwargs)
     if pretrained:
-        model.load_state_dict(load_state_dict_from_url(models_url[model_name]))
+        model.load_state_dict(
+            load_state_dict_from_url(models_url['savee_model']))
+
+    return model
+
+
+def ravdess_model(pretrained: bool = False, progress: bool = True, **kwargs):
+    model = MainMultimodal(**kwargs)
+    if pretrained:
+        model.load_state_dict(load_state_dict_from_url(
+            models_url['ravdess_model']))
+
+    return model
+
+
+def crema_model(pretrained: bool = False, progress: bool = True, **kwargs):
+    model = MainMultimodal(**kwargs)
+    if pretrained:
+        model.load_state_dict(load_state_dict_from_url(
+            models_url['crema_model']))
 
     return model
