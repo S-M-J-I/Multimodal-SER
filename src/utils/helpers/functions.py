@@ -3,7 +3,7 @@ import librosa.display
 import IPython.display as ipd
 import matplotlib.pyplot as plt
 from IPython.display import Video
-from configs.ravdess import RAVDESSConfigs
+from ..configs.ravdess import RAVDESSConfigs
 import numpy as np
 """
     Defining the helper functions

@@ -1,6 +1,6 @@
 from torch import nn
 from torchvision.models.video import r2plus1d_18
-from passthrough import PassThrough
+from .passthrough import PassThrough
 
 
 class VideoNetwork(nn.Module):

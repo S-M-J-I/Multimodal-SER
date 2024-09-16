@@ -1,9 +1,9 @@
 import torch
 import random
 from torch.utils.data import Dataset
-from utils.transforms.video_transforms import *
-from utils.transforms.audio_transforms import *
-from utils.helpers.functions import *
+from ..transforms.video_transforms import *
+from ..transforms.audio_transforms import *
+from ..helpers.functions import *
 from torchvision.io import read_image, read_video
 import gc
 

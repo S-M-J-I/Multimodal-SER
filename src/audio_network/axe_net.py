@@ -1,6 +1,6 @@
 from torch import nn
-from cnn_network import Conv1D
-from se_net import SENet
+from .cnn_network import Conv1D
+from .se_net import SENet
 
 
 class AxeNet(nn.Module):

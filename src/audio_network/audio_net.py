@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from axe_net import AxeNet
+from .axe_net import AxeNet
 
 
 class AudioNetwork(nn.Module):

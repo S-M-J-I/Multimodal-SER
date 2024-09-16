@@ -1,7 +1,7 @@
 import torch
 import gc
 import random
-from helpers.functions import *
+from ..helpers.functions import *
 
 
 def train_step(model: torch.nn.Module, dataloader, optimizer, loss_fn, idx2class, accuracy_fn=None, save_memory=False, device: str = "cpu"):
