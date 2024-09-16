@@ -9,8 +9,8 @@ import gc
 __all__ = ['savee_model', 'ravdess_model', 'crema_model']
 
 models_url = {
-    'savee_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_ravdess.pt',
-    'ravdess_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_savee.pt',
+    'savee_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_savee.pt',
+    'ravdess_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_ravdess.pt',
     'crema_model': ''
 }
 
