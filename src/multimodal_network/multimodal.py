@@ -11,7 +11,7 @@ __all__ = ['savee_model', 'ravdess_model', 'crema_model']
 models_url = {
     'savee_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_savee.pt',
     'ravdess_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_ravdess.pt',
-    'crema_model': ''
+    'crema_model': 'https://github.com/S-M-J-I/Multimodal-SER/raw/master/weights/best-multimodal_cremad.pt'
 }
 
 
@@ -65,7 +65,7 @@ def savee_model(pretrained: bool = False, progress: bool = True, **kwargs):
     model = MainMultimodal(**kwargs)
     if pretrained:
         model.load_state_dict(
-            load_state_dict_from_url(models_url['savee_model']))
+            load_state_dict_from_url(models_url['savee_model'], map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")))
 
     return model
 
@@ -74,7 +74,7 @@ def ravdess_model(pretrained: bool = False, progress: bool = True, **kwargs):
     model = MainMultimodal(**kwargs)
     if pretrained:
         model.load_state_dict(load_state_dict_from_url(
-            models_url['ravdess_model']))
+            models_url['ravdess_model'], map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")))
 
     return model
 
@@ -83,6 +83,6 @@ def crema_model(pretrained: bool = False, progress: bool = True, **kwargs):
     model = MainMultimodal(**kwargs)
     if pretrained:
         model.load_state_dict(load_state_dict_from_url(
-            models_url['crema_model']))
+            models_url['crema_model'], map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")))
 
     return model
