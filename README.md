@@ -1,7 +1,6 @@
 # An audio video-based multi-modal fusion approach for speech emotion recognition 
 
 ### Status: Submitted for Review
-Link: 
 
 ***Authors: S M JISHANUL ISLAM, SAHID HOSSAIN MUSTAKIM, MUSFIRAT HOSSAIN, MYSUN
 MASHIRA, NUR ISLAM SHOURAV, MD. RAYHAN AHMED, SALEKUL ISLAM, SWAKKHAR SHATABDA, AND A.K.M. MUZAHIDUL ISLAM***
@@ -51,9 +50,10 @@ pipenv run jupyter notebook
 ```
 
 ## Weights
-To obtain the weights of the model, kindly access the following [link](https://drive.google.com/drive/folders/141iQxVmjnL0zsWhjmakI6stK2CdoeRln?usp=sharing)
+To obtain the weights of the model, kindly access it through the [weights](./weights/) directory. ***Torch hub support for ease of model use is being worked on.***
 
-For any assistance or issues, kindly open an Issue in this repository.
+
+#### For any assistance or issues, kindly open an Issue in this repository.
 
 
 ## Contributions
