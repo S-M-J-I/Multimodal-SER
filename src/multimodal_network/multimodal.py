@@ -65,7 +65,12 @@ def savee_model(pretrained: bool = False, progress: bool = True, **kwargs):
     model = MainMultimodal(**kwargs)
     if pretrained:
         model.load_state_dict(
-            load_state_dict_from_url(models_url['savee_model'], map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")))
+            load_state_dict_from_url(
+                models_url['savee_model'], 
+                map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            ),
+            strict=False
+        )
 
     return model
 
