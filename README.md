@@ -36,6 +36,18 @@ pip3 install --user pipenv
 pipenv install -r requirements.txt
 ```
 
+## Run the model
+To load the model, you can use `torch.hub()` to load it without having the model's structure:
+```python
+import torch
+
+# example: load the savee model
+model = torch.hub.load("S-M-J-I/Multimodal-SER",'savee_model', pretrained=True, num_classes=7, fine_tune_limit=3)
+```
+After this, the model will load and it will be ready for use!
+
+Alternatively, this repo contains a [weights directory](./weights/).
+
 
 ## Run the pipelines
 
@@ -48,9 +60,6 @@ Run the following command in the terminal to start the local server:
 ```sh
 pipenv run jupyter notebook
 ```
-
-## Weights
-To obtain the weights of the model, kindly access it through the [weights](./weights/) directory. ***Torch hub support for ease of model use is being worked on.***
 
 
 #### For any assistance or issues, kindly open an Issue in this repository.
