@@ -1,9 +1,8 @@
 # An audio video-based multi-modal fusion approach for speech emotion recognition 
 
-### Status: Submitted for Review
+### Status: Accepted at Knowledge-Based Systems (Elsevier), 2026 — In Press, 26
 
-***Authors: S M JISHANUL ISLAM, SAHID HOSSAIN MUSTAKIM, MUSFIRAT HOSSAIN, MYSUN
-MASHIRA, NUR ISLAM SHOURAV, MD. RAYHAN AHMED, SALEKUL ISLAM, A.K.M. MUZAHIDUL ISLAM, AND SWAKKHAR SHATABDA***
+***Authors: S M Jishanul Islam, Sahid Hossain Mustakim, Musfirat Hossain, Mysun Mashira, Nur Islam Shourav, Md Rayhan Ahmed, Salekul Islam, A.K.M Muzahidul Islam, Swakkhar Shatabda***
 
 ## Requirements
 
