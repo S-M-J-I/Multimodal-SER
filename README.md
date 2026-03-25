@@ -1,4 +1,4 @@
-# 🎧🎥 Multimodal Emotion Recognition (Audio-Visual Fusion)
+# Multimodal Emotion Recognition (Audio-Visual Fusion)
 
 <p align="center">
   <b>Official Implementation of our Knowledge-Based Systems (Elsevier) 2026 Paper</b><br>
