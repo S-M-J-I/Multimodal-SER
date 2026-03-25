@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Official Implementation of our Knowledge-Based Systems (Elsevier) 2026 Paper</b><br>
-  <i>An audio-video based multi-modal fusion approach for emotion recognition</i>
+  <i>An audio-video based multi-modal fusion approach for emotion recognition</i><br>
 </p>
 
 <p align="center">
@@ -10,6 +10,9 @@
   💻 <a href="https://github.com/S-M-J-I/Multimodal-SER">Code</a> • 
   🧠 <b>PyTorch</b> • 🎯 <b>Multimodal Learning</b>
 </p>
+
+**Authors: S M Jishanul Islam, Sahid Hossain Mustakim, Musfirat Hossain, Mysun Mashira, Nur Islam Shourav, Md Rayhan Ahmed, Salekul Islam, A.K.M Muzahidul Islam, Swakkhar Shatabda**
+
 Keywords: Multimodal Emotion Recognition, Speech Emotion Recognition, Audio-Visual Learning, Deep Learning, R(2+1)D, Squeeze-and-Excitation, CNN, PyTorch, Affective Computing, Human Behavior Analysis
 
 ---
